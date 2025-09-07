@@ -1,5 +1,13 @@
 agenda = []
 
+def adicionar_contato(nome,numero):
+        pessoa = {
+            "nome:" == nome, 
+            "número" == numero
+        }
+        agenda.append(pessoa)
+
+
 while True:
     print('--------------------------------------------------------')
     print('                   AGENDA TELEFÔNICA                    ')
@@ -11,15 +19,24 @@ while True:
 
     resposta = input(': ')
 
+    print()
+
     match resposta:
-        case 1:
+        case '1':
             for agenda in agenda:
+                print('--------------------------------------------------------')
                 print(agenda)
+                print('--------------------------------------------------------')
 
-        case 2:
+        case '2':
+            print()
             nome = input('Digite o nome do contato: ')
+            print()
             numero = input('Digite o número do contato: ')
+            print()
 
+            adicionar_contato(nome, numero)
 
-    break
+        case '3':
+            break
 
