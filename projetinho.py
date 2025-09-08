@@ -1,8 +1,7 @@
 agenda = []
 
 def adicionar_contato(nome,numero):
-        pessoa = {"nome" : nome, "numero" : numero
-        }
+        pessoa = {"nome" : nome, "numero" : numero}
         agenda.append(pessoa)
 
 
@@ -12,26 +11,32 @@ while True:
     print('--------------------------------------------------------')
     print('[1] - Ver contatos')
     print('[2] - Adicionar contatos')
-    print('[3] - Sair')
+    print('[4] - Sair')
     print()
 
-    resposta = input(': ')
+    resposta = input('R: ')
 
     print()
 
     match resposta:
         case '1':
-            for contatos in agenda:
+            if not agenda:
+                print("📭 Nenhum contato salvo.")
+            else:
+                print("📒 Contatos salvos:")
+            for contato in agenda:
                 print('--------------------------------------------------------')
-                print(agenda)
+                print(f"Nome: {contato['nome']} | Número: {contato['numero']}")
                 print('--------------------------------------------------------')
 
         case '2':
-            print()
             nome = input('Digite o nome do contato: ')
-            print()
-            numero = input('Digite o número do contato: ')
-            print()
+            while True:
+                try:
+                    numero = int(input('Digite o número do contato: '))
+                    break
+                except ValueError:
+                    print('⚠ Digite apenas números!')
 
             adicionar_contato(nome, numero)
 
