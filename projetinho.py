@@ -11,7 +11,7 @@ while True:
     print('--------------------------------------------------------')
     print('[1] - Ver contatos')
     print('[2] - Adicionar contatos')
-    print('[4] - Sair')
+    print('[3] - Sair')
     print()
 
     resposta = input('R: ')
