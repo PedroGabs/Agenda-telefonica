@@ -11,6 +11,8 @@ def cadastroContato():
     nome = input('\nDigite o nome do contato: ')
     if len(nome) >= 50:
         print("Nome muito grande! (limite de 50 caracteres)")
+        time.sleep(1.7)
+        os.system('cls')
     else:
         while True:
             try:
@@ -19,31 +21,37 @@ def cadastroContato():
                     print('Número cadastrado!\n')
                     numero = int(numero)
                     adicionar_contato(nome, numero)
-                    time.sleep(3)
+                    time.sleep(1.7)
                     os.system('cls')
                 else:
-                    print("\nO número deve ter apenas 11 dígitos!\n")
+                    print("\nO número deve ter 11 dígitos!\n")
+                    time.sleep(1.7)
+                    os.system('cls')
                 break
             except ValueError:
-                print('⚠ Digite apenas números!\n')
+                print('Digite apenas números!\n')
+                time.sleep(1.7)
+                os.system('cls')
 
 def visualizarContatos():
     if not agenda:
         print("╔════════════════════════════════════════════════════╗ ")
         print("║ Nenhum contato salvo.                              ║ ")
         print("╚════════════════════════════════════════════════════╝")
-        time.sleep(3)
+        time.sleep(1.7)
         os.system('cls')
     else:
-        print("\n📒 Contatos salvos:")
+        print("\nContatos salvos:")
     for contato in agenda:
-        print('╔════════════════════════════════════════════════════╗')
+        print('╔════════════════════════════════════════════════════════════════════════════════╗')
         print(f"Nome: {contato['nome']} | Número: {contato['numero']}")
-        print('╚════════════════════════════════════════════════════╝\n')
-        time.sleep(18)
-        os.system('cls')
+        print('╚════════════════════════════════════════════════════════════════════════════════╝\n')
+    input('Pressione "ENTER" para voltar ao menu...')
+    os.system('cls')
 
 #######################################     MENU     ########################################
+
+print('Seja bem vindo a sua agenda telefônica!!\n')
 
 while True:
     print('╔══════════════════════════════════════════════════════╦════════════════════════════════════════╗')
@@ -64,6 +72,8 @@ while True:
         resposta = int(input('R: '))
     except ValueError:
         print('\nUtilize apenas números!\n')
+        time.sleep(1.7)
+        os.system('cls')
         continue
 
     match resposta:
@@ -77,4 +87,6 @@ while True:
             break
 
         case _:
-            print("\nOpção inválida!\n")
+            print("\nOpção inválida, tente novamente!\n")
+            time.sleep(1.7)
+            os.system('cls')
