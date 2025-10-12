@@ -3,7 +3,7 @@
 <br>
 
 ## COMO FUNCIONA?:
-O sistema ao iniciar irá mostrar um menu no qual abaixo há um input no qual o usuário consegue digitar o valor referente a opção que deseja utilizar.
+Ao iniciar, o sistema exibirá um menu com as opções disponíveis, seguido de um campo de entrada onde o usuário poderá digitar o número correspondente à opção desejada.
 
 Caso o usuário opte pela opção "1", o sistema irá mostrar a agenda, caso a agenda esteja vazia nada será mostrado, inicialmente a agenda começa vazia.
 
