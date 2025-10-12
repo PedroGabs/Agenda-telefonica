@@ -13,7 +13,7 @@ Caso o usuário opte pela opção "3", o sistema se encerra.
 
 ## TECNOLOGIAS USADAS:
 
-No projeto foi utilizado o Python 3 com integração a 2 bibliotecas, sendo elas: os e time.
+No projeto foi utilizado o Python 3 com integração a 2 bibliotecas, sendo elas: ('os') e o ('time').
 
 ---
 
