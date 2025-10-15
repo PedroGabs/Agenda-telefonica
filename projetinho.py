@@ -54,6 +54,12 @@ def visualizarContatos():
 print('Seja bem vindo a sua agenda telefônica!!\n')
 
 while True:
+    print('╔═══════════════════════════════════════════════════════════════════════════════════════════════╗')
+    print('║ Agenda Telefônica. V1.0.2                                                                     ║')
+    print('║ Autor: Pedro G.                                                                               ║')
+    print('║ Descrição: Aplicativo de terminal para gerenciar contatos telefônicos.                        ║')
+    print('║ Linguagem: Python 3                                                                           ║')
+    print('╚═══════════════════════════════════════════════════════════════════════════════════════════════╝\n')
     print('╔══════════════════════════════════════════════════════╦════════════════════════════════════════╗')
     print('║                  AGENDA TELEFÔNICA                   ║                                        ║')
     print('╠══════════════════════════════════════════════════════╬════════════════════════════════════════╣')
