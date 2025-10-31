@@ -14,6 +14,7 @@ def editarContato():
         print("╚════════════════════════════════════════════════════╝")
         time.sleep(1.7)
         os.system('cls')
+        return
 
     os.system('cls')
     print("╔════════════════════════════════════════════════════╗")
@@ -31,6 +32,7 @@ def editarContato():
         print('Índice inválido!')
         time.sleep(1.7)
         os.system('cls')
+        return
     
     print('╔═════════════════════════╗')
     print('║O que você deseja editar?║')
@@ -140,6 +142,33 @@ def cadastroContato():
                 time.sleep(1.7)
                 os.system('cls')
 
+def RemoverContato():
+    os.system('cls')
+    print("╔════════════════════════════════════════════════════╗")
+    print("║ Qual contato você deseja remover?                  ║")
+    print("╚════════════════════════════════════════════════════╝")
+    for i, contato in enumerate(agenda):
+        print('╔════════════════════════════════════════════════════════════════════════════════╗')
+        print(f"[{i + 1}] - Nome: {contato['nome']} | Número: {contato['numero']}")
+        print('╚════════════════════════════════════════════════════════════════════════════════╝\n')
+
+    try:
+        indice = int(input('Digite o índice do contato para remover: ')) - 1
+        contato = agenda.pop(indice)
+        os.system('cls')
+        print("╔═══════════════════════════════╗")
+        print("║ Contato removido com sucesso! ║")
+        print("╚═══════════════════════════════╝")
+        time.sleep(2.2)
+        os.system('cls')
+
+    except (ValueError, IndexError):
+        print('Índice inválido!')
+        time.sleep(1.7)
+        os.system('cls')
+
+    
+
 def visualizarContatos():
     if not agenda:
         os.system('cls')
@@ -164,7 +193,7 @@ print('Seja bem vindo a sua agenda telefônica!!\n')
 
 while True:
     print('╔═══════════════════════════════════════════════════════════════════════════════════════════════╗')
-    print('║ Agenda Telefônica. V1.0.3                                                                     ║')
+    print('║ Agenda Telefônica. V1.0.4                                                                     ║')
     print('║ Autor: Pedro G.                                                                               ║')
     print('║ Descrição: Aplicativo de terminal para gerenciar contatos telefônicos.                        ║')
     print('║ Linguagem: Python 3                                                                           ║')
@@ -174,11 +203,11 @@ while True:
     print('╠══════════════════════════════════════════════════════╬════════════════════════════════════════╣')
     print(r'║                                                      ║                                        ║')
     print(r'║[1] - Ver contatos                                    ║             ______________             ║')
-    print(r'║[2] - Adicionar contatos                              ║            /   ,,____,,   \:.          ║')
+    print(r'║[2] - Adicionar contato                               ║            /   ,,____,,   \:.          ║')
     print(r'║[3] - Pesquisar contatos                              ║            |__| [][][] |__|:  :        ║')
     print(r'║[4] - Editar contatos                                 ║              /  [][][]  \   :  :       ║')
-    print(r'║[5] - Sair                                            ║             /   [][][]   \   :  :      ║')
-    print(r'║                                                      ║            /    [][][]    \   ..       ║')
+    print(r'║[5] - Remover contato                                 ║            /    [][][]    \   ..       ║')
+    print(r'║[6] - Sair                                            ║             /   [][][]   \   :  :      ║')
     print(r'║                                                      ║           |________________|           ║')
     print(r'║                                                      ║                                        ║')
     print('╚══════════════════════════════════════════════════════╩════════════════════════════════════════╝')
@@ -203,8 +232,11 @@ while True:
 
         case 4:
             editarContato()
-        
+
         case 5:
+            RemoverContato()
+
+        case 6:
             break
 
         case _:
