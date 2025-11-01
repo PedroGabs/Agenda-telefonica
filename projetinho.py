@@ -51,7 +51,9 @@ def editarContato():
                 print("Nome muito grande! (limite de 50 caracteres)")
 
             else:
-                print('nome modificado com sucesso!')
+                print("╔═══════════════════════════════════╗")
+                print("║ Nome modificado com sucesso!      ║")
+                print("╚═══════════════════════════════════╝\n")
                 contato['nome'] = Novo_nome
                 time.sleep(2.2)
                 os.system('cls')
@@ -61,7 +63,9 @@ def editarContato():
                 try:
                     Novo_numero = input('Digite o número modificado: ')
                     if Novo_numero.isdigit() and len(Novo_numero) == 11:
-                        print('Número modificado com sucesso!\n')
+                        print("╔═══════════════════════════════════╗")
+                        print("║ Número modificado com sucesso!    ║")
+                        print("╚═══════════════════════════════════╝\n")
                         Novo_numero = int(Novo_numero)
                         contato['numero'] = Novo_numero
                         time.sleep(1.7)
@@ -82,8 +86,7 @@ def editarContato():
             print('Opção inválida\n')
             time.sleep(1.7)
             os.system('cls')
-
-    
+ 
 def filtrarContato(agenda, termo):
     resultados = []
     for contato in agenda:
@@ -92,6 +95,14 @@ def filtrarContato(agenda, termo):
     return resultados
 
 def Filtragem():
+    if not agenda:
+        print("╔════════════════════════════════════════════════════╗")
+        print("║ Nenhum contato salvo para pesquisar.               ║")
+        print("╚════════════════════════════════════════════════════╝")
+        time.sleep(1.7)
+        os.system('cls')
+        return
+
     os.system('cls')
     print("╔════════════════════════════════════════════════════╗")
     print("║ Qual contato você deseja procurar?                 ║")
@@ -127,7 +138,9 @@ def cadastroContato():
             try:
                 numero = input('Digite o número do contato com o DDD: ')
                 if numero.isdigit() and len(numero) == 11:
-                    print('Número cadastrado!\n')
+                    print("╔═══════════════════════════════════╗")
+                    print("║ Número cadastrado com sucesso!    ║")
+                    print("╚═══════════════════════════════════╝\n")
                     numero = int(numero)
                     adicionar_contato(nome, numero)
                     time.sleep(1.7)
@@ -143,6 +156,14 @@ def cadastroContato():
                 os.system('cls')
 
 def RemoverContato():
+    if not agenda:
+        print("╔════════════════════════════════════════════════════╗")
+        print("║ Nenhum contato salvo para remover.                 ║")
+        print("╚════════════════════════════════════════════════════╝")
+        time.sleep(1.7)
+        os.system('cls')
+        return
+
     os.system('cls')
     print("╔════════════════════════════════════════════════════╗")
     print("║ Qual contato você deseja remover?                  ║")
@@ -171,7 +192,6 @@ def RemoverContato():
 
 def visualizarContatos():
     if not agenda:
-        os.system('cls')
         print("╔════════════════════════════════════════════════════╗")
         print("║ Nenhum contato salvo.                              ║")
         print("╚════════════════════════════════════════════════════╝")
@@ -193,7 +213,7 @@ print('Seja bem vindo a sua agenda telefônica!!\n')
 
 while True:
     print('╔═══════════════════════════════════════════════════════════════════════════════════════════════╗')
-    print('║ Agenda Telefônica. V1.0.4                                                                     ║')
+    print('║ Agenda Telefônica. V1.0.5                                                                     ║')
     print('║ Autor: Pedro G.                                                                               ║')
     print('║ Descrição: Aplicativo de terminal para gerenciar contatos telefônicos.                        ║')
     print('║ Linguagem: Python 3                                                                           ║')
@@ -206,8 +226,8 @@ while True:
     print(r'║[2] - Adicionar contato                               ║            /   ,,____,,   \:.          ║')
     print(r'║[3] - Pesquisar contatos                              ║            |__| [][][] |__|:  :        ║')
     print(r'║[4] - Editar contatos                                 ║              /  [][][]  \   :  :       ║')
-    print(r'║[5] - Remover contato                                 ║            /    [][][]    \   ..       ║')
-    print(r'║[6] - Sair                                            ║             /   [][][]   \   :  :      ║')
+    print(r'║[5] - Remover contato                                 ║             /   [][][]   \   :  :      ║')
+    print(r'║[6] - Sair                                            ║            /    [][][]    \   ..       ║')
     print(r'║                                                      ║           |________________|           ║')
     print(r'║                                                      ║                                        ║')
     print('╚══════════════════════════════════════════════════════╩════════════════════════════════════════╝')
