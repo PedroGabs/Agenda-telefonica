@@ -19,7 +19,10 @@ Caso o usuário opte pela opção "4", será possível editar um contato existen
 Primeiro, o sistema mostrará todos os contatos salvos, e o usuário poderá escolher qual deseja editar informando o índice do contato.
 Após isso, será possível alterar o nome ou o número, respeitando os mesmos limites de caracteres e formato.
 
-Caso o usuário opte pela opção "5", o sistema será encerrado.
+Caso o usuário opte pela opção "5", será possível estar removendo um contato existente na lista.
+Primeiro, o sistema mostrará todos os contatos salvos, e o usuário poderá escolher qual deseja remover informando o índice do contato.
+
+Caso o usuário opte pela opção "6", o sistema será encerrado.
 
 ## TECNOLOGIAS USADAS:
 
